@@ -1,0 +1,176 @@
+2019-02-23 13:34:14 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:115) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 13:35:56 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:115) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 13:38:52 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:115) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 14:04:39 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:117) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 14:05:58 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:118) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 14:05:58 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:06:46 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:118) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:06:46 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:06:47 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:99) ]
+INFO:Server Address is localhost:8888
+2019-02-23 16:21:40 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:118) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:21:40 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:21:41 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:99) ]
+INFO:Server Address is localhost:8888
+2019-02-23 16:32:32 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.connect(AbstractClient.java:107) ]
+INFO:Start connect server...
+2019-02-23 16:32:32 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.checkConnectedServer(AbstractClient.java:69) ]
+INFO:Check Completed! That has 0 active connect
+2019-02-23 16:37:09 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.connect(AbstractClient.java:107) ]
+INFO:Start connect server...
+2019-02-23 16:37:10 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.connect(AbstractClient.java:114) ]
+ERROR:{}
+java.net.ConnectException: Connection refused: no further information: localhost/127.0.0.1:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:208)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:281)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+2019-02-23 16:40:30 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:118) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:40:30 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:40:31 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:99) ]
+INFO:Server is listening in 
+2019-02-23 16:41:48 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:118) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:41:48 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:41:49 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:99) ]
+INFO:Server is listening in 
+2019-02-23 16:42:03 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:118) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:42:03 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:42:04 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:99) ]
+INFO:Server is listening in localhost/127.0.0.1
+2019-02-23 16:42:37 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:118) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:42:37 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:42:38 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:99) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 16:44:46 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.connect(AbstractClient.java:107) ]
+INFO:Start connect server...
+2019-02-23 16:44:46 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.checkConnectedServer(AbstractClient.java:69) ]
+INFO:Check Completed! That has 0 active connect
+2019-02-23 16:45:42 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.connect(AbstractClient.java:107) ]
+INFO:Start connect server...
+2019-02-23 16:45:43 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.connect(AbstractClient.java:114) ]
+ERROR:{}
+java.net.ConnectException: Connection refused: no further information: localhost/127.0.0.1:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:208)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:281)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+2019-02-23 16:45:43 下午 [Thread: main][ Class:com.xlong.xrpc.client.AbstractClient >> Method: com.xlong.xrpc.client.AbstractClient.checkConnectedServer(AbstractClient.java:69) ]
+INFO:Check Completed! That has 0 active connect
+2019-02-23 16:51:40 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:51:40 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:51:41 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 16:56:42 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:56:42 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:56:43 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:9999
+2019-02-23 16:58:47 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 16:58:47 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 16:58:47 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:9999
+2019-02-23 17:00:24 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:00:24 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:00:25 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 17:00:45 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:00:45 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:00:45 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 17:01:43 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:01:43 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:01:43 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:97) ]
+ERROR:{}
+java.lang.IllegalStateException: childHandler not set
+	at io.netty.bootstrap.ServerBootstrap.validate(ServerBootstrap.java:194)
+	at io.netty.bootstrap.ServerBootstrap.validate(ServerBootstrap.java:45)
+	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:232)
+	at com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:95)
+	at com.xlong.xrpc.demo.ServerDemo.main(ServerDemo.java:18)
+2019-02-23 17:01:43 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 17:02:57 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:02:57 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:02:57 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 17:03:17 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:03:17 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:03:17 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 17:03:39 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:03:39 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:03:40 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 17:14:20 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:14:20 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:14:21 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:65535
+2019-02-23 17:14:27 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:14:27 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:14:27 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:65535
+2019-02-23 17:17:09 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:17:09 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:17:10 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
+2019-02-23 17:17:14 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.addService(AbstractXServer.java:123) ]
+INFO:Loading service: com.xlong.xrpc.demo.HelloService
+2019-02-23 17:17:14 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:75) ]
+INFO:Server startup...
+2019-02-23 17:17:14 下午 [Thread: main][ Class:com.xlong.xrpc.server.AbstractXServer >> Method: com.xlong.xrpc.server.AbstractXServer.start(AbstractXServer.java:104) ]
+INFO:Server is listening in localhost/127.0.0.1:8888
