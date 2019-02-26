@@ -1,10 +1,8 @@
 package com.xlong.xrpc.registry;
 
 import com.xlong.xrpc.client.AbstractClient;
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,10 +27,12 @@ public class ServiceDiscovery {
         this.registryAddress = registryAddress;
     }
 
-    public void init() {
+    public void init(String data) {
         zookeeper = connectServer();
         if (zookeeper != null) {
             watchNode(zookeeper);
+            addRootNode();
+            createNode(data);
         }
     }
 
@@ -54,7 +54,7 @@ public class ServiceDiscovery {
     private ZooKeeper connectServer() {
         ZooKeeper zk = null;
         try {
-            zk = new ZooKeeper(registryAddress, Constant.ZK_SESSION_TIMEOUT, new Watcher() {
+            zk = new ZooKeeper(registryAddress, ZKConstant.ZK_SESSION_TIMEOUT, new Watcher() {
                 @Override
                 public void process(WatchedEvent event) {
                     if (event.getState() == Event.KeeperState.SyncConnected) {
@@ -71,7 +71,7 @@ public class ServiceDiscovery {
 
     private void watchNode(final ZooKeeper zk) {
         try {
-            List<String> nodeList = zk.getChildren(Constant.ZK_REGISTRY_PATH, new Watcher() {
+            List<String> nodeList = zk.getChildren(ZKConstant.ZK_PROVIDER_ROOT, new Watcher() {
                 @Override
                 public void process(WatchedEvent event) {
                     if (event.getType() == Event.EventType.NodeChildrenChanged) {
@@ -82,16 +82,44 @@ public class ServiceDiscovery {
             // 获取所有提供RPC服务的地址
             List<String> serverAddrList = new ArrayList<>();
             for (String node : nodeList) {
-                byte[] bytes = zk.getData(Constant.ZK_REGISTRY_PATH + "/" + node, false, null);
+                byte[] bytes = zk.getData(ZKConstant.ZK_PROVIDER_ROOT + "/" + node, false, null);
                 serverAddrList.add(new String(bytes));
             }
             logger.debug("node data: {}", serverAddrList);
             this.serverAddrList = serverAddrList;
 
-            logger.debug("Service discovery modified.");
+            logger.info("Service discovery modified.");
             abstractXClient.updateServerConnect(serverAddrList);
         } catch (KeeperException | InterruptedException e) {
             logger.error("", e);
+        }
+    }
+
+    private void addRootNode(){
+        try {
+            Stat s = zookeeper.exists(ZKConstant.ZK_CONSUMER_ROOT, false);
+            if (s == null) {
+                zookeeper.create(ZKConstant.ZK_CONSUMER_ROOT, new byte[0], ZooDefs.Ids.OPEN_ACL_UNSAFE,
+                        CreateMode.PERSISTENT);
+            }
+        } catch (KeeperException e) {
+            logger.error(e.toString());
+        } catch (InterruptedException e) {
+            logger.error(e.toString());
+        }
+    }
+
+    private void createNode(String data) {
+        try {
+            byte[] bytes = data.getBytes();
+            String path = zookeeper.create(ZKConstant.ZK_CONSUMER, bytes, ZooDefs.Ids.OPEN_ACL_UNSAFE,
+                    CreateMode.EPHEMERAL_SEQUENTIAL);
+            logger.debug("create zookeeper node ({} => {})", path, data);
+        } catch (KeeperException e) {
+            logger.error("", e);
+        }
+        catch (InterruptedException ex){
+            logger.error("", ex);
         }
     }
 

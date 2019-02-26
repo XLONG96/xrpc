@@ -3,16 +3,16 @@ package com.xlong.xrpc.demo;
 import com.xlong.xrpc.client.*;
 import com.xlong.xrpc.registry.ServiceDiscovery;
 
+import java.net.InetAddress;
 import java.util.concurrent.ExecutionException;
 
 public class CilentDemo {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-
+    public static void main(String[] args) throws Exception {
         ServiceDiscovery serviceDiscovery = new ServiceDiscovery("120.77.246.48:2181");
         XClient client = new XClient(serviceDiscovery);
         HelloService helloService = client.create(HelloService.class);
-        helloService.sayHello();
-        helloService.sayWords("Hello World");
+        System.out.println(helloService.sayHello());
+        System.out.println(helloService.sayWords("Hello Java"));
 /*
         XAsyncClient xAsyncClient = new XAsyncClient(serviceDiscovery);
         XClientFuture future = xAsyncClient.call("sayWords", new Object[]{"Hello World"}, new XListener() {

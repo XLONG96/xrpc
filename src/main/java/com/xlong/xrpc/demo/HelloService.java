@@ -1,7 +1,7 @@
 package com.xlong.xrpc.demo;
 
 public interface HelloService {
-    void sayHello();
+    String sayHello();
 
-    void sayWords(String words);
+    String sayWords(String words);
 }

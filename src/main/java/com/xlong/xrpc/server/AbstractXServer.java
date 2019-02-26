@@ -93,15 +93,15 @@ public abstract class AbstractXServer implements XServer {
                     .option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
-            ChannelFuture f = b.bind().sync();
-            f.channel().closeFuture().sync();
-
             if (serviceRegistry != null) {
                 logger.info("Server is listening in {}:{}", host, port);
                 serviceRegistry.register(host + ":" + port);
             } else {
                 logger.info("Server is listening in {}:{}", inetSocketAddress.getAddress(), inetSocketAddress.getPort());
             }
+
+            ChannelFuture f = b.bind().sync();
+            f.channel().closeFuture().sync();
         }
     }
 

@@ -1,6 +1,6 @@
 package com.xlong.xrpc.protocol;
 
-import com.xlong.xrpc.util.SerializationUtil;
+import com.xlong.xrpc.util.SerializationUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
@@ -16,7 +16,7 @@ public class XProtobufEncoder extends MessageToByteEncoder {
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, Object in, ByteBuf out) throws Exception {
         if (genericClass.isInstance(in)) {
-            byte[] data = SerializationUtil.serialize(in);
+            byte[] data = SerializationUtils.serialize(in);
             out.writeInt(data.length);
             out.writeBytes(data);
         }

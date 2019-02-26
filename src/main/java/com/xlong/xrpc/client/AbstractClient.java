@@ -5,6 +5,7 @@ import com.xlong.xrpc.protocol.RPCResponse;
 import com.xlong.xrpc.protocol.XProtobufDecoder;
 import com.xlong.xrpc.protocol.XProtobufEncoder;
 import com.xlong.xrpc.registry.ServiceDiscovery;
+import com.xlong.xrpc.util.NetworkUtils;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -50,7 +51,11 @@ public abstract class AbstractClient implements Client {
     public AbstractClient(ServiceDiscovery serviceDiscovery) {
         this.serviceDiscovery = serviceDiscovery;
         serviceDiscovery.setAbstractXClient(this);
-        serviceDiscovery.init();
+        try {
+            serviceDiscovery.init(NetworkUtils.getHostname());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
     }
 
     private void checkConnectedServer() {
@@ -114,7 +119,7 @@ public abstract class AbstractClient implements Client {
         } catch (Exception e) {
             logger.error("{}", e);
         }
-        // 客户端连接成功后保存持久连接的handler
+        // 客户端连接成功后保存持久连接的handler，然后在该zookeeper的相应服务下新建结点
         channelFuture.addListener(new ChannelFutureListener() {
             @Override
             public void operationComplete(final ChannelFuture channelFuture) throws Exception {

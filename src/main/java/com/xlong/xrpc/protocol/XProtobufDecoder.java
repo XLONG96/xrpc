@@ -1,6 +1,6 @@
 package com.xlong.xrpc.protocol;
 
-import com.xlong.xrpc.util.SerializationUtil;
+import com.xlong.xrpc.util.SerializationUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
@@ -33,7 +33,7 @@ public class XProtobufDecoder extends ByteToMessageDecoder {
         byte[] data = new byte[dataLength];
         in.readBytes(data);
         logger.info("Server receive msg length {}", dataLength);
-        Object obj = SerializationUtil.deserialize(data, genericClass);
+        Object obj = SerializationUtils.deserialize(data, genericClass);
         out.add(obj);
     }
 }
