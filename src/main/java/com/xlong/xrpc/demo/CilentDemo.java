@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 
 public class CilentDemo {
     public static void main(String[] args) throws Exception {
-        ServiceDiscovery serviceDiscovery = new ServiceDiscovery("120.77.246.48:2181");
+        ServiceDiscovery serviceDiscovery = new ServiceDiscovery("10.202.38.54:2181");
         XClient client = new XClient(serviceDiscovery);
         HelloService helloService = client.create(HelloService.class);
         System.out.println(helloService.sayHello());
