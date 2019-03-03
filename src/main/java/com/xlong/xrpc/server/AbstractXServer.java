@@ -5,6 +5,7 @@ import com.xlong.xrpc.protocol.RPCResponse;
 import com.xlong.xrpc.protocol.XProtobufDecoder;
 import com.xlong.xrpc.protocol.XProtobufEncoder;
 import com.xlong.xrpc.registry.ServiceRegistry;
+import com.xlong.xrpc.repository.JpaManager;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -31,6 +32,7 @@ public abstract class AbstractXServer implements XServer {
     private EventLoopGroup bossGroup = null;
     private EventLoopGroup workerGroup = null;
     private Class<? extends ServerChannel> channel;
+    private JpaManager jpaManager;
 
     public AbstractXServer(int port) {
         this(port, new NioEventLoopGroup(), new NioEventLoopGroup(),
@@ -43,6 +45,7 @@ public abstract class AbstractXServer implements XServer {
         this.bossGroup = bossGroup;
         this.workerGroup = workerGroup;
         this.channel = channel;
+        this.jpaManager = new JpaManager();
         initAddress();
     }
 
@@ -60,6 +63,7 @@ public abstract class AbstractXServer implements XServer {
         this.bossGroup = bossGroup;
         this.workerGroup = workerGroup;
         this.channel = channel;
+        this.jpaManager = new JpaManager();
         initAddress();
     }
 
@@ -86,7 +90,7 @@ public abstract class AbstractXServer implements XServer {
                                     .addLast(new LengthFieldBasedFrameDecoder(64 * 1024, 0, 4))
                                     .addLast(new XProtobufDecoder(RPCRequest.class))
                                     .addLast(new XProtobufEncoder(RPCResponse.class))
-                                    .addLast(new XProcessor(handlerMapper));
+                                    .addLast(new XProcessor(handlerMapper, jpaManager));
 
                         }
                     })

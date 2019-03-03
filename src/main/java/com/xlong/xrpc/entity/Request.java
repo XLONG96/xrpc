@@ -4,11 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "requests")
-public class Request {
+public class Request implements Serializable {
     @Id
     @GeneratedValue
     private int id;
@@ -79,5 +80,18 @@ public class Request {
 
     public void setRequestTime(Date requestTime) {
         this.requestTime = requestTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "id=" + id +
+                ", requestId='" + requestId + '\'' +
+                ", requestClassName='" + requestClassName + '\'' +
+                ", requestMethodName='" + requestMethodName + '\'' +
+                ", requestParams='" + requestParams + '\'' +
+                ", requestHost='" + requestHost + '\'' +
+                ", requestTime=" + requestTime +
+                '}';
     }
 }

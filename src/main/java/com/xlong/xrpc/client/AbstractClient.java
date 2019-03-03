@@ -5,6 +5,7 @@ import com.xlong.xrpc.protocol.RPCResponse;
 import com.xlong.xrpc.protocol.XProtobufDecoder;
 import com.xlong.xrpc.protocol.XProtobufEncoder;
 import com.xlong.xrpc.registry.ServiceDiscovery;
+import com.xlong.xrpc.repository.JpaManager;
 import com.xlong.xrpc.util.NetworkUtils;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -42,13 +43,15 @@ public abstract class AbstractClient implements Client {
     private ReentrantLock lock = new ReentrantLock();
     private Condition connected = lock.newCondition();
     private AtomicInteger roundRobin = new AtomicInteger();
-
+    private JpaManager jpaManager;
 
     public AbstractClient(String host, int port) {
+        this.jpaManager = new JpaManager();
         connect(new InetSocketAddress(host, port));
     }
 
     public AbstractClient(ServiceDiscovery serviceDiscovery) {
+        this.jpaManager = new JpaManager();
         this.serviceDiscovery = serviceDiscovery;
         serviceDiscovery.setAbstractXClient(this);
         try {
@@ -106,7 +109,7 @@ public abstract class AbstractClient implements Client {
                                          .addLast(new LengthFieldBasedFrameDecoder(64 * 1024, 0, 4))
                                          .addLast(new XProtobufEncoder(RPCRequest.class))
                                          .addLast(new XProtobufDecoder(RPCResponse.class))
-                                         .addLast(new XClientHandler());
+                                         .addLast(new XClientHandler(jpaManager));
                              }
                          }
                 );

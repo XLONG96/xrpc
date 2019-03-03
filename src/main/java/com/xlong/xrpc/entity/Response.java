@@ -4,11 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "reponses")
-public class Response {
+public class Response implements Serializable {
     @Id
     @GeneratedValue
     private int id;
@@ -59,5 +60,16 @@ public class Response {
 
     public void setResponseTime(Date responseTime) {
         this.responseTime = responseTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "id=" + id +
+                ", requestId='" + requestId + '\'' +
+                ", responseError='" + responseError + '\'' +
+                ", responseResult='" + responseResult + '\'' +
+                ", responseTime=" + responseTime +
+                '}';
     }
 }
